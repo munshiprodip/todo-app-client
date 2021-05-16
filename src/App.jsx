@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     fireAuth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        const url = `http://localhost:5000/todos/${userAuth.email}`;
+        const url = `https://vast-cliffs-30420.herokuapp.com/todos/${userAuth.email}`;
         axios
           .get(url)
           .then((response) => {
@@ -41,7 +41,7 @@ function App() {
 
   const reloadData = () => {
     if (isLoggedIn) {
-      const url = `http://localhost:5000/todos/${loggedInUser?.email}`;
+      const url = `https://vast-cliffs-30420.herokuapp.com/todos/${loggedInUser?.email}`;
       axios
         .get(url)
         .then((response) => {

@@ -1,11 +1,13 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../../App";
 
-const AddForm = ({ reloadData }) => {
+const AddForm = () => {
+  const { loggedInUser, reloadData } = useContext(UserContext);
   const [newTodo, setNewTodo] = useState({ name: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = `http://localhost:5000/todos/`;
+    const url = `https://vast-cliffs-30420.herokuapp.com/todos/`;
 
     axios
       .post(url, newTodo)
@@ -23,7 +25,7 @@ const AddForm = ({ reloadData }) => {
 
   const handleInputChange = (e) => {
     setNewTodo({
-      email: "munshiprodip@gmail.com",
+      email: loggedInUser.email,
       [e.target.name]: e.target.value,
     });
   };

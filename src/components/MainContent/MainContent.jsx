@@ -35,7 +35,7 @@ const MainContent = () => {
   // Update Todo status to complete
   const handleCheckBox = (e) => {
     console.log(e.target.value);
-    const url = `http://localhost:5000/todos/updateStatus/${e.target.value}`;
+    const url = `https://vast-cliffs-30420.herokuapp.com/todos/updateStatus/${e.target.value}`;
 
     axios
       .put(url)
@@ -55,7 +55,7 @@ const MainContent = () => {
 
   // Update Todo priority
   const changePriority = (id, value) => {
-    const url = `http://localhost:5000/todos/updatePriority/${id}`;
+    const url = `https://vast-cliffs-30420.herokuapp.com/todos/updatePriority/${id}`;
 
     axios
       .put(url, { value: value })
@@ -70,7 +70,7 @@ const MainContent = () => {
 
   // Delete completed Todo
   const deleteTodo = (id) => {
-    const url = `http://localhost:5000/todos/delete/${id}`;
+    const url = `https://vast-cliffs-30420.herokuapp.com/todos/delete/${id}`;
     axios
       .delete(url)
       .then((response) => {

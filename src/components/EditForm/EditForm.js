@@ -16,7 +16,7 @@ const EditForm = () => {
   const handleEditSubmit = (e) => {
     e.preventDefault();
 
-    const url = `http://localhost:5000/todos/updateTodo/${toEditTodo._id}`;
+    const url = `https://vast-cliffs-30420.herokuapp.com/todos/updateTodo/${toEditTodo._id}`;
 
     axios
       .put(url, toEditTodo)
